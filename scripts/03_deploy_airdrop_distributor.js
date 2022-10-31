@@ -7,22 +7,18 @@
 const hre = require('hardhat');
 
 async function main() {
-	const tokenAddress = process.env.TOKEN_ADDRESS;
+    const tokenAddress = process.env.TOKEN_ADDRESS;
 
-	const AirdropDistributor = await hre.ethers.getContractFactory(
-		'AirdropDistributor'
-	);
-	const airdropDistributor = await AirdropDistributor.deploy(tokenAddress);
-	await airdropDistributor.deployed();
+    const AirdropDistributor = await hre.ethers.getContractFactory('AirdropDistributor');
+    const airdropDistributor = await AirdropDistributor.deploy(tokenAddress);
+    await airdropDistributor.deployed();
 
-	console.log(
-		`AirdropDistributor contract deployed to ${airdropDistributor.address}`
-	);
+    console.log(`AirdropDistributor contract deployed to ${airdropDistributor.address}`);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
 // and properly handle errors.
-main().catch(error => {
-	console.error(error);
-	process.exitCode = 1;
+main().catch((error) => {
+    console.error(error);
+    process.exitCode = 1;
 });

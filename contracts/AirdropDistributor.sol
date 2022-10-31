@@ -19,7 +19,7 @@ contract AirdropDistributor is Ownable {
 
     modifier hasEnoughTokens(uint256[] memory _amounts, uint256 _tokens) {
         uint256 total = 0;
-        for (uint i = 0; i < _amounts.length; i++) {
+        for (uint256 i = 0; i < _amounts.length; i++) {
             total += _amounts[i];
         }
 
@@ -32,7 +32,7 @@ contract AirdropDistributor is Ownable {
         uint256[] memory _amounts,
         uint256 _tokens
     ) public onlyOwner hasEnoughTokens(_amounts, _tokens) {
-        for (uint i = 0; i < _recipients.length; i++) {
+        for (uint256 i = 0; i < _recipients.length; i++) {
             recipients[_recipients[i]] += _amounts[i];
         }
         emit Distribute(_recipients, _amounts);
