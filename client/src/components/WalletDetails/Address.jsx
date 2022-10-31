@@ -1,12 +1,12 @@
-import styled from '@emotion/styled'
-import useShorten from '../../hooks/useShorten'
+import styled from '@emotion/styled';
+import useShorten from '../../hooks/useShorten';
 
 const Text = styled.div`
-	color: inherit;
-`
+    color: inherit;
+`;
 
 const Address = ({ account }) => {
-	return <Text>{useShorten(account)}</Text>
-}
+    return <Text>{useShorten(account)}</Text>;
+};
 
-export default Address
+export default Address;

@@ -6,9 +6,9 @@ import ReactDOM from 'react-dom/client';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-	<React.StrictMode>
-		<Web3Provider>
-			<App />
-		</Web3Provider>
-	</React.StrictMode>
+    <React.StrictMode>
+        <Web3Provider>
+            <App />
+        </Web3Provider>
+    </React.StrictMode>
 );
